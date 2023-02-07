@@ -36,7 +36,7 @@ kbbiScrapperRouter.get('/entri/:kata', (req, res, next) => {
 
 app.use('/', kbbiScrapperRouter);
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
 	console.log('listening on port 3000')
 })
 
