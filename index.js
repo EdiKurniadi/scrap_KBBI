@@ -1,6 +1,7 @@
 const express = require('express');
 const request = require('request');
 const cheerio = require('cheerio');
+const cors = require('cors');
 // const cookieParser = require('cookie-parser');
 
 const kbbiScrapperRouter = express.Router();
@@ -16,6 +17,8 @@ app.use((req,res,next) => {
 	res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
 	next();
 })
+
+app.use(cors());
 
 kbbiScrapperRouter.get('/entri/:kata', (req, res, next) => {
 	let kata = req.params.kata;
